@@ -4,3 +4,7 @@ El proposit d'aquesta pràctica es en fer la pràctica 5 de PHP al framework de 
 - Per començar vaig acudir al fitxer .env per poder declarar les variables del entorn del nostre projecte com connexió a la Base de Dades o el nom de la nostra aplicació.
 
 - Per crear una Ruta ens anem a la carpeta de routes/web.php o routes/api.php.
+
+- En Terminal vaig crear un controlador dient la següent comanda:
+    php artisan make:controller TaskController
+    
