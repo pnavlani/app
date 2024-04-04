@@ -46,6 +46,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        //una vegada fet la validació de login redirigeix a dashboard(a la pagina de usuari)
         return redirect(RouteServiceProvider::HOME);
     }
 }
