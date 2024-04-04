@@ -94,10 +94,24 @@ Route::get('salutacions/{nom}', function($nom){
 
 
 //Route::view('/', 'home')->name('home');
+// Ruta per anar cap a index i mostrar artcles com anonim
+Route::get('/',[TaskController::class,'index'])->name('articles');
+//Ruta cap a Login
+Route::get('/login',function(){ 
+  return view('login');
+})->name('login'); 
 
-Route::get('/',[TaskController::class,'index'])->name('index');
-Route::get('/new-task',[TaskController::class, 'create'])->name('create');
-Route::post('/new-task',[TaskController::class, 'save'])->name('save');
+
+//Ruta cap a Registrar
+Route::get('/register',function(){ 
+  return view('register');
+})->name('register'); 
+
+
+
+
+//Route::get('/new-task',[TaskController::class, 'create'])->name('create');
+//Route::post('/new-task',[TaskController::class, 'save'])->name('save');
 
 /*
 Route::view('/about', 'about')->name('about');

@@ -5,6 +5,11 @@ El proposit d'aquesta pràctica es en fer la pràctica 5 de PHP al framework de 
 
 - Per crear una Ruta ens anem a la carpeta de routes/web.php o routes/api.php.
 
-- En Terminal vaig crear un controlador dient la següent comanda:
-    php artisan make:controller TaskController
-    
+- Per crear Controlador vaig utilitzar la següent comanda per terminal: "php artisan make:controller TaskController".
+
+- Per crear Model vaig utilitzar la següent comanda per terminal: "php artisan make:model Task".
+
+- En tema funcionalitat primer de tot vaig anar a la base de dades i vaig omplir dades per poder comprovar si em mostrava els aticles en paginació a la pagina de index anonim.
+
+
+

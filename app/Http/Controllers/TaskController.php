@@ -7,21 +7,12 @@ use App\Models\Task;
 
 class TaskController extends Controller
 {
-    
-    public function index(){
-        $tasks = Task::get();
-        return view('index',compact('tasks'));
-    } 
-
-    public function create(){
-        return view('create');
+     //Index: Aqui es on mostra els articles com anonim
+    public function index()
+    {
+        $articles = Task::paginate(5); // Obte articles de Base de Dades
+        return view('index', ['articles' => $articles]); // Pasa articles a la vista
     }
 
-    public function save(Request $request){
-        $task = new Task;
-        $task->id = $request->id;
-        $task->descripcio = $request->descripcio;
-        $task->save();
-        return redirect()->route('index');
-    }
+   
 }
