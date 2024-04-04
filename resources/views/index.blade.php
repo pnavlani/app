@@ -19,7 +19,7 @@
 <div class="navbar">
   
     <a href="login">Inicia la Sessió</a> 
-    <a href="">Crea un compte</a> 
+    <a href="register">Registar-se</a> 
   
 </div>
 

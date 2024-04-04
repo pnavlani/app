@@ -11,5 +11,22 @@ El proposit d'aquesta pràctica es en fer la pràctica 5 de PHP al framework de 
 
 - En tema funcionalitat primer de tot vaig anar a la base de dades i vaig omplir dades per poder comprovar si em mostrava els aticles en paginació a la pagina de index anonim.
 
+- En el cas de disseny i com la part de Registrar i Iniciar Sessió vaig aplicar el Breeze, ja que Laravel Breeze es una implementació minima i simple de totes les caracteristiques de autenticació de Laravel.
+Vaig utilitzar les següents comandes per poder adquirir el Breeze:
+
+*    Instal·lar Laravel Breeze usando Composer
+
+ composer require laravel/breeze --dev
+
+* Comanda breeze:install
+
+    php artisan breeze:install
+        php artisan migrate
+        npm install
+        npm run dev
+*    Instal·lar Laravel Breeze usando Composer
+
+ composer require laravel/breeze --dev
+
 
 
