@@ -57,7 +57,7 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                  <!-- Editar Perfil -->
                                 <a class="dropdown-item" href="{{ route('profile.edit') }}">
-                                        {{ __('Profile') }}
+                                        {{ __('Perfil') }}
                                     </a>
                                 <!--Tancar Sessió --> 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
