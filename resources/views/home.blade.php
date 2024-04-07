@@ -15,8 +15,20 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                </div>
+                </div> 
             </div>
+
+            <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Articles</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
         </div>
     </div>
 </div>

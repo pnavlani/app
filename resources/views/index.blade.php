@@ -51,7 +51,7 @@
                 @endforeach
             </tbody>
         </table>
-
+        
         <!-- Paginació -->
         {{$articles->links()}}
     </div>
