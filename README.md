@@ -28,5 +28,19 @@ Vaig utilitzar les següents comandes per poder adquirir el Breeze:
 
  composer require laravel/breeze --dev
 
+- Importem boostrap, i per poder importar vaig utilitzar la següent comanda:
+
+ ******TODO
+
+- #### Per poder posar oauth de google:
+    1. Ens anem cap a Google.Cloud i una vegada creat el projecte i entrat dintre creem una credencial de oauth
+
+    2. Ens anem cap a .env i fiquem el id_client i la clau de la següent manera al final  de codi:
+    
+        GOOGLE_OAUTH_ID="***********.apps.googleusercontent.com"
+       
+        GOOGLE_OAUTH_KEY="GOCSPX-27_******kC3OCmE"
+
+
 
 

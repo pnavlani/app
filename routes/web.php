@@ -1,8 +1,12 @@
 <?php
 
-use App\Http\Controllers\TaskController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TaskController; /* Use per Controlador*/ 
+use App\Http\Controllers\ProfileController; /*Use per el Controlador de Perfil */
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite; /*Use per els oauths */
+use App\Http\Controllers\Auth\LoginController;
+use App\Models\User; /*Import per poder redirigir com usuari Oauth a Dashboard */
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +50,29 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/login-google', function () {
+  return Socialite::driver('google')->redirect();
+})->name('login-google');
+
+Route::get('/google-callback', function () {
+  $user = Socialite::driver('google')->user();
+  $userExists = User::where('external_id', $user->id)->where('external_auth', 'google')->first();
+
+  if($userExists){
+    Auth::login($userExists);
+  }else{
+   $userNew = User::create([
+      'name' => $user->name,
+      'email' => $user->email,
+      'avatar' => $user->avatar,
+      'external_id' => $user->id,
+      'external_auth' => 'google',
+    ]);
+    Auth::login($userNew);
+  }
+
+  return redirect()->route('home');
+})->name('google-callback');
+
+

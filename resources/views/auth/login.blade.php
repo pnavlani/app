@@ -59,10 +59,16 @@
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __("T'has olvidat la contrasenya?") }}
                                     </a>
                                 @endif
                             </div>
+                        </div>
+
+                        <div class="row mb-0">
+                        <a href="{{ __('login-google')}}">
+                                Inciar Sessió amb Google
+                                </a>
                         </div>
                     </form>
                 </div>
