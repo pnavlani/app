@@ -16,7 +16,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::paginate();
+        $userId = auth()->id(); // Obté el ID del usuari que esta actualment autenticat
+        $articles = Article::where('user_id', $userId)->paginate(5);
 
         return view('article.index', compact('articles'))
             ->with('i', (request()->input('page', 1) - 1) * $articles->perPage());
