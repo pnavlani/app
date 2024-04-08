@@ -67,6 +67,12 @@ Route::get('/articles/{article}', [App\Http\Controllers\ArticleController::class
 Route::get('/articles/{article}/edit', [App\Http\Controllers\ArticleController::class, 'edit'])->name('articles.edit');
 
 
+Route::post('/articles', [App\Http\Controllers\ArticleController::class, 'store'])->name('articles.store');
+
+
+//Route::put('/articles/{article}', [App\Http\Controllers\ArticleController::class, 'update'])->name('articles.update');
+Route::patch('/articles/{article}', [App\Http\Controllers\ArticleController::class, 'update'])->name('articles.update');
+
 Route::get('/login-google', function () {
   return Socialite::driver('google')->redirect();
 })->name('login-google');
