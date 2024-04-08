@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\TaskController; /* Use per Controlador*/ 
 use App\Http\Controllers\ProfileController; /*Use per el Controlador de Perfil */
 use Illuminate\Support\Facades\Route;
@@ -74,5 +75,10 @@ Route::get('/google-callback', function () {
 
   return redirect()->route('home');
 })->name('google-callback');
+
+Route::resource('articles', ArticleController::class);
+
+
+
 
 
