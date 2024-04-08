@@ -52,6 +52,21 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Route::get('/articles', 'ArticleController@index')->name('articles.index');
+//Route::get('/articles', [App\Http\Controllers\ArticleController::class, 'index'])->name('articles');
+
+Route::get('/articles', [App\Http\Controllers\ArticleController::class, 'index'])->name('articles.index');
+
+Route::get('/articles/create', [App\Http\Controllers\ArticleController::class, 'create'])->name('articles.create');
+
+Route::delete('/articles/{article}', [App\Http\Controllers\ArticleController::class, 'destroy'])->name('articles.destroy');
+
+Route::get('/articles/{article}', [App\Http\Controllers\ArticleController::class, 'show'])->name('articles.show');
+
+
+Route::get('/articles/{article}/edit', [App\Http\Controllers\ArticleController::class, 'edit'])->name('articles.edit');
+
+
 Route::get('/login-google', function () {
   return Socialite::driver('google')->redirect();
 })->name('login-google');
@@ -73,10 +88,11 @@ Route::get('/google-callback', function () {
     Auth::login($userNew);
   }
 
-  return redirect()->route('home');
+  return redirect()->route('articles.index');
 })->name('google-callback');
 
-Route::resource('articles', ArticleController::class);
+
+
 
 
 
