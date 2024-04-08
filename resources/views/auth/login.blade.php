@@ -69,6 +69,9 @@
                         <a href="{{ __('login-google')}}">
                                 Inciar Sessió amb Google
                                 </a>
+                            <a href="{{ __('login-github')}}">
+                            Inciar Sessió amb Github
+                            </a>
                         </div>
                     </form>
                 </div>

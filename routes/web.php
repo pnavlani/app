@@ -98,6 +98,33 @@ Route::get('/google-callback', function () {
 })->name('google-callback');
 
 
+Route::get('login-github', function () {
+  return Socialite::driver('github')->redirect();
+})->name('login-github');
+
+
+Route::get('/github-callback', function () {
+  $user = Socialite::driver('github')->user();
+  $userExists = User::where('external_id', $user->id)->where('external_auth', 'github')->first();
+
+  if($userExists){
+    Auth::login($userExists);
+  }else{
+   $userNew = User::create([
+      'name' => $user->name ?? 'Usuari',
+      'email' => $user->email,
+      'avatar' => $user->avatar,
+      'external_id' => $user->id,
+      'external_auth' => 'github',
+    ]);
+    Auth::login($userNew);
+  }
+
+  return redirect()->route('articles.index');
+  
+})->name('github-callback');
+
+
 
 
 
