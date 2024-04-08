@@ -111,7 +111,7 @@ Route::get('/github-callback', function () {
     Auth::login($userExists);
   }else{
    $userNew = User::create([
-      'name' => $user->name ?? 'Usuari',
+      'name' => $user->nickname,
       'email' => $user->email,
       'avatar' => $user->avatar,
       'external_id' => $user->id,
